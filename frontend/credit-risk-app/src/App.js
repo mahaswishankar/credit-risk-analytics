@@ -121,7 +121,8 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post("http://127.0.0.1:5000/predict", form);
+      // const res = await axios.post("http://127.0.0.1:5000/predict", form);
+      const res = await axios.post("https://credit-risk-analytics.onrender.com/predict", form);
       setResult(res.data);
     } catch (err) {
       setError("Failed to connect to backend. Make sure Flask is running on port 5000.");
