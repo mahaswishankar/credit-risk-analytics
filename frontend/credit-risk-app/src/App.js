@@ -400,7 +400,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        Built by Mahaswi Shankar · XGBoost Credit Risk Engine · JP Morgan Portfolio Project
+        Built by Mahaswi Shankar · XGBoost Credit Risk Engine · Portfolio Project
       </footer>
     </div>
   );
