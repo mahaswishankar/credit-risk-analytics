@@ -1,0 +1,69 @@
+{
+  "grade_thresholds": {
+    "A": [
+      0.0,
+      0.05
+    ],
+    "B": [
+      0.05,
+      0.15
+    ],
+    "C": [
+      0.15,
+      0.3
+    ],
+    "D": [
+      0.3,
+      0.5
+    ],
+    "E": [
+      0.5,
+      1.0
+    ]
+  },
+  "decision_thresholds": {
+    "APPROVE": [
+      0.0,
+      0.15
+    ],
+    "REVIEW": [
+      0.15,
+      0.35
+    ],
+    "REJECT": [
+      0.35,
+      1.0
+    ]
+  },
+  "score_range": [
+    300,
+    850
+  ],
+  "grade_descriptions": {
+    "A": [
+      "< 5%",
+      "Very Low Risk",
+      "APPROVE"
+    ],
+    "B": [
+      "5-15%",
+      "Low Risk",
+      "APPROVE"
+    ],
+    "C": [
+      "15-30%",
+      "Moderate Risk",
+      "REVIEW"
+    ],
+    "D": [
+      "30-50%",
+      "High Risk",
+      "REJECT"
+    ],
+    "E": [
+      "> 50%",
+      "Very High Risk",
+      "REJECT"
+    ]
+  }
+}
