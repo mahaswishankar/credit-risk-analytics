@@ -25,18 +25,58 @@ const defaultForm = {
   cb_person_cred_hist_length: 3,
 };
 
+// function GaugeChart({ probability }) {
+//   const pct   = Math.min(Math.max(probability, 0), 100);
+//   const angle = (pct / 100) * 180 - 90;
+//   const r     = 80;
+//   const cx    = 100, cy = 100;
+//   const toRad = (deg) => (deg * Math.PI) / 180;
+//   const arcX  = (deg) => cx + r * Math.cos(toRad(deg - 90));
+//   const arcY  = (cy) => cy + r * Math.sin(toRad(cy - 90));
+
+//   const startAngle = -90;
+//   const endAngle   = 90;
+//   const midAngle   = startAngle + (pct / 100) * 180;
+
+//   const describeArc = (start, end) => {
+//     const x1 = cx + r * Math.cos(toRad(start));
+//     const y1 = cy + r * Math.sin(toRad(start));
+//     const x2 = cx + r * Math.cos(toRad(end));
+//     const y2 = cy + r * Math.sin(toRad(end));
+//     return `M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`;
+//   };
+
+//   const needleX = cx + (r - 10) * Math.cos(toRad(midAngle));
+//   const needleY = cy + (r - 10) * Math.sin(toRad(midAngle));
+
+//   const color = pct < 15 ? "#2ed573" : pct < 35 ? "#ffa502" : "#ff4757";
+
+//   return (
+//     <svg viewBox="0 0 200 120" className="gauge-svg">
+//       <path d={describeArc(-90, 90)} fill="none" stroke="#1a1a2e" strokeWidth="18" />
+//       <path d={describeArc(-90, midAngle)} fill="none" stroke={color} strokeWidth="18"
+//             strokeLinecap="round" style={{ filter: `drop-shadow(0 0 6px ${color})` }} />
+//       <line x1={cx} y1={cy} x2={needleX} y2={needleY}
+//             stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+//       <circle cx={cx} cy={cy} r="5" fill="white" />
+//       <text x={cx} y={cy + 22} textAnchor="middle" fill={color}
+//             fontSize="22" fontWeight="bold" fontFamily="monospace">
+//         {pct.toFixed(1)}%
+//       </text>
+//       <text x="22"  y="108" fill="#666" fontSize="9" fontFamily="monospace">LOW</text>
+//       <text x="155" y="108" fill="#666" fontSize="9" fontFamily="monospace">HIGH</text>
+//     </svg>
+//   );
+// }
+
 function GaugeChart({ probability }) {
   const pct   = Math.min(Math.max(probability, 0), 100);
-  const angle = (pct / 100) * 180 - 90;
   const r     = 80;
   const cx    = 100, cy = 100;
   const toRad = (deg) => (deg * Math.PI) / 180;
-  const arcX  = (deg) => cx + r * Math.cos(toRad(deg - 90));
-  const arcY  = (cy) => cy + r * Math.sin(toRad(cy - 90));
 
   const startAngle = -90;
-  const endAngle   = 90;
-  const midAngle   = startAngle + (pct / 100) * 180;
+  const midAngle  = startAngle + (pct / 100) * 180;
 
   const describeArc = (start, end) => {
     const x1 = cx + r * Math.cos(toRad(start));
